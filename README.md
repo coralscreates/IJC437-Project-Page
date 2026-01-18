@@ -13,6 +13,7 @@ Three main questions were explored to answer the question:
 ### Methodology 
 - Excel to clean the data
 - R studio to run Explanatory Data Analysis (EDA), Linear Regression Models and Random Forest Models.
+  
 
 ### Key findings
 - A
