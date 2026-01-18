@@ -1,6 +1,6 @@
 #step 1: set working directory should have 4 files: (1)official_songs_cleaned.csv, (2) official_is_pop_cleaned.csv (3) acoustic_features.csv (4) artists_cleaned .csv
 
-setwd("~/Desktop/Assignment/cleaned data") # this was MY working directory, make sure to change it to match your setwork
+setwd("~/Desktop/Assignment/IJC437 R codes") # this was MY working directory, make sure to change it to match your setwork
 library(tidyverse)
 library(ggplot2)
 
