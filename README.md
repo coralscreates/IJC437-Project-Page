@@ -3,9 +3,9 @@ IJC437: Introduction to Data Science Coursework Code
 
 ## Project: What are the characteristics that predict Song Popularity?
 ### Background Conext
-Music is an influencial and important part of different cultures and societies. It brings a variety of people from different backgrounds and identiies, together.  The music industry is continously changing, especaillt through digitalistion which has increased music consumption, global influence and revenue. Digitalisation plays an important role in this. Successful music is defined by song ppualirty, which is how well a song is doing across a range of omcponents such as sales and ranks. For stakeholders and individuals it is important to understand what makes a song popular. 
+Music is an influential and important part of different cultures and societies, bringing people from different backgrounds and identities together.  The music industry is continuously evolving, particularly through digitalisation which has increased music consumption, global influence and revenue. Song popularity is commonly used as an indicator of musical success and often  reflects performance across multiple components, such as sales and chart rankings. For artists and industry stakeholders, understanding the characteristics that contribute to song popularity is increasingly important.
 
-Three main questions explored:
+Three main questions were explored to answer the question:
 1. Do acoustic features predict song popularity?
 2. Does song type (collobrative or solo songs) predict song popularity?
 3. Does artist type predict song popularity?
