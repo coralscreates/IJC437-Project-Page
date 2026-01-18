@@ -23,5 +23,5 @@ Three main questions were explored to answer the question:
 ## How To Run The Code
 There are two options to run the code
 ### Option 1: Using The Pre-Merged Dataset
-
+1. Download the "dataset_songs"
 ### Option 2: Merging The Raw CSV Files
