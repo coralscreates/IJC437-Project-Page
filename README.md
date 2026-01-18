@@ -1,7 +1,7 @@
 # IJC437-Project-Page
-IJC437: Introduction to Data Science Coursework Code
+IJC437: Introduction to Data Science Coursework Overview and Code
 
-## Project: What are the characteristics that predict Song Popularity?
+## 🎶Project: What are the characteristics that predict Song Popularity?
 ### Background Conext
 Music is an influential and important part of many cultures and societies, bringing people from different backgrounds and identities together.  The music industry is continuously evolving, particularly through digitalisation which has increased music consumption, global influence and revenue. Song popularity is commonly used as an indicator of musical success and often reflects performance across multiple components, such as sales and chart rankings. For artists and industry stakeholders, understanding the characteristics that contribute to song popularity is increasingly important.
 
