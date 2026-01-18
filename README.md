@@ -25,9 +25,10 @@ Three main questions were explored to answer the question:
 There are two options to run the code
 ### Option 1: Using The Pre-Merged And Cleaned Dataset
 1. Download the **"dataset_songs.csv"** file onto your laptop.
-2. Open RStudio and set the folder containing the "dataset_songs.csv" file as your working directory
-3. Start running the code from **Step 7** as no need to merge or clean the data
-4. Follow through each step to run the code and complete the analysis 
+2. Download the **"Pre-merged CODE .r"** file and open it in RStudio
+3. Import the **"dataset_songs.csv"** file into RStudio (following Step 1 in the R script)
+4. Run the script from Step 1 to the end complete the analysis 
    
 ### Option 2: Merging The Raw CSV Files
 1. Download the relevant files onto your laptop: **"official_songs_cleaned.csv"**, **"official_is_pop_cleaned.csv"**, **"acoustic_features.csv"** and **"artists_cleaned .csv"**
+2. 
