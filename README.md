@@ -11,15 +11,33 @@ Music is an influential and important part of many cultures and societies, bring
 3. Does artist type predict song popularity?
 
 ### Methodology 
-- Excel to clean the data
-- R studio to run Explanatory Data Analysis (EDA), Linear Regression Models and Random Forest Models.
-- Libraries used: tidyverse, ggplot2, MASS, rgl corrplot and randomForest (make sure that these are all downloaded)
+
+**Data Cleaning**
+- Microsoft Excel
+  
+**Explanatory Data Analysis**
+  - RStudio
+  - Scatterplots, correlation matrix, histograms, boxplots
+
+**Data Analysis**
+- Linear Regression Model
+- Random Forest Model
+
+**Libraries**
+
+*install with nstall.packages() function*
+- tidyverse
+- ggplot2
+- MASS
+- rgl
+- corrplot
+- randomForest 
   
 
 ### Key findings
-- A
-- B
-- C
+- x
+- x
+- x
 
 ## How To Run The Code
 There are two options to run the code
