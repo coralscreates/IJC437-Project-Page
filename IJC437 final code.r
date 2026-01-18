@@ -15,19 +15,19 @@ song_pop
 songs_pop_dataset<-songs_data %>%
   left_join(song_pop, by="song_id") #left_join function is used to merge dataframes together based on a same variable in this case: song_id
 
-#3. now i will add acoustic features to the dataset
+#4. now i will add acoustic features to the dataset
 song_acoustic<-read_tsv("acoustic_features.csv", col_names = TRUE) # the reason for tsv instead of csv= file is tsv
 
 songs_p_a_dataset<-songs_pop_dataset %>%
   left_join(song_acoustic, by="song_id") #here you are adding acoustic features to is_pop and songs based on songid again
 
-#4. So far dataset already consists of fles 1-3 now adding last one which is the artists file
+#5. So far dataset already consists of fles 1-3 now adding last one which is the artists file
 songs_artist<-read_csv("artists_cleaned .csv", col_names=TRUE)
 
 songs_dataset<-songs_p_a_dataset %>%
   left_join(songs_artist, by="artist_id") #this has now joined all files together amazing now have created a dataset with merged files!!
 
-#5.Now  it is time to clean the data by this I need to remove any missing values 
+#6.Now  it is time to clean the data by this I need to remove any missing values 
 cleaning_genreandrap<- complete.cases (
   songs_dataset$artist_type,
   songs_dataset$main_genre,
@@ -39,11 +39,11 @@ dataset_songs<- songs_dataset[
 ] #rows were removed using complete case 
 
 
-#6. Check the dataset so far: how many variables were removed went from [insert amount of rows] to  15635
+#7. Check the dataset so far: how many variables were removed went from [insert amount of rows] to  15635
 
 View(dataset_songs) 
 
-#7. checking if there are any missing values 
+#8. checking if there are any missing values 
 #any(is.na) function allows to see if any misisng values still present (FALSE- no NA found TRUE - NA found)
 #sum(is.na) function allows to see numerical values if any left
 any(is.na(dataset_songs$song_type)) # FALSE
@@ -62,7 +62,7 @@ nrow(dataset_songs) #total row of 15635 left from original 20,405
 
 write.csv(dataset_songs, "dataset_songs.csv", row.names = FALSE) # here i am just downloading the dataset for myself
 
-#7: Exploratory Data Analysis(EDA): Here I am conducting an EDA of data for acoustic features individually (there are 9 features)
+#9: Exploratory Data Analysis(EDA): Here I am conducting an EDA of data for acoustic features individually (there are 9 features)
 # first looking at the internal structure of each individual variable and then looking at the summary(mean, interquaartile range etc) of it
 str(dataset_songs$popularity.x)
 str(dataset_songs$danceability)
@@ -86,14 +86,14 @@ summary(dataset_songs$speechiness)
 summary(dataset_songs$valence)
 summary(dataset_songs$tempo)
 
-#8. A range of different packages used for EDA: tidyverse, MASS,rgl, corrplot (if package not install use this function install.packages("[insert package name]"))
+#10. A range of different packages used for EDA: tidyverse, MASS,rgl, corrplot (if package not install use this function install.packages("[insert package name]"))
 library(tidyverse)
 library(MASS)
 library(rgl)
 
 install.packages("corrplot")
 library(corrplot)
-#9: scatterplots for popularity and each of the nine acoustic features were conducted
+#11: scatterplots for popularity and each of the nine acoustic features were conducted
 # cor.test () function was also used to look at correlation alongside each scatterplot just to make numerical inferences of the relationship
 
 #danceability EDA
@@ -179,7 +179,7 @@ corrplot(songs_cor_matrix, method = "color", type = "upper",
          tl.col = "black", addCoef.col = "black", number.cex = 0.6) #found weak correlation between popularity and acoustic features --> loudness strongest assoication from all features
 
 
-#11. Creating a histogram to look at the individual distribution of each variable (popularity and each acoustic feature)
+#12. Creating a histogram to look at the individual distribution of each variable (popularity and each acoustic feature)
 ggplot(dataset_songs, aes(x = popularity.x)) +
   geom_histogram(bins = 30) #this is just a basic histogram with no information so let us try one where we add more information and make it a bit more colourful
 
@@ -307,10 +307,10 @@ ggplot(dataset_songs, aes(x = tempo)) +
     title = "Distribution of song tempo with a Density Curve"
   )
 
-#12 following EDA decided to transformed the DV which is song popularity 
+#13 following EDA decided to transformed the DV which is song popularity 
 dataset_songs$pop_transformed<- log(dataset_songs$popularity.x +1) #log() function is used to transform the populairty variable
 
-#13. run EDA on new (pop_transformed) variable
+#14. run EDA on new (pop_transformed) variable
 #scatterplot
 ggplot(data= dataset_songs,
        aes(x=pop_transformed, y= danceability)
@@ -331,7 +331,7 @@ ggplot(dataset_songs, aes(x = pop_transformed)) +
 
 #from this can see that data became more skewed when popularity was transformed therefore kept original popualirty variable
 
-#13. Now to prepare data for Multiple Linear Regression analysis the data has to be split into train and test
+#15. Now to prepare data for Multiple Linear Regression analysis the data has to be split into train and test
 
 nrow(dataset_songs) #total row of 15635
 set.seed(123) # this is to get the same split each time so that if I would like to rerun code I am able to get same outputs as mine
@@ -367,7 +367,7 @@ coef(full_ac_model) # gives me the coefficient of the model without the addition
 plot(full_ac_model) #regression diagnostics (used to assess model limitations)
 
 
-#14. now lets move onto prediction of linear regression model using train dataset
+#16. now lets move onto prediction of linear regression model using train dataset
 
 songs_test_p<- predict(full_ac_model,
         newdata = songs_test) #here I am predicting the values on the test set
@@ -386,7 +386,7 @@ songs_test_new$residuals<- songs_test_new$predicted- songs_test$popularity.x #th
 
 head(songs_test_new[, c("popularity.x", "predicted", "residuals")]) #check in here to look at prediction and residuals 
 
-#15. Here we are calulcating different things, Sum of Squared Errors (SSE), Mean Squared Error (MSE) and the Root Mean Square Error(RMSE)
+#17. Here we are calulcating different things, Sum of Squared Errors (SSE), Mean Squared Error (MSE) and the Root Mean Square Error(RMSE)
 sse_test<- sum(songs_test_new$residuals**2) 
 sse_test #1595097
 mse_test<- mean(songs_test_new$residuals^2) 
@@ -406,7 +406,7 @@ SST <- sum((y_actual - mean(y_actual))^2)  # Total Sum of Squares
 r2_songs_test <- 1 - SSE/SST
 r2_songs_test # 0.1979768
 
-#16. Time for the EDA and visualise the predicted vs actual values
+#18. Time for the EDA and visualise the predicted vs actual values
 library(ggplot2)
 
 ggplot(
@@ -425,7 +425,7 @@ ggplot(
 #FIRST REGRESSION DONE which looked at all the acoustic features and song popualirty
 
 
-# 17: Now moving onto the second regression which looks at the acoustic features that research has highlighted as most signifincant 
+# 19: Now moving onto the second regression which looks at the acoustic features that research has highlighted as most signifincant 
 #repeating the same process I followed for the first regression model
 research_a_model<- lm(popularity.x ~ danceability + valence +
                  loudness +speechiness, data=songs_train)
@@ -441,7 +441,7 @@ coef(research_a_model) # gives me the coefficient of the model without the addit
 
 plot(research_a_model) #regression diagnostics (used to assess model limitations)
 
-#18: Now onto the looking at the test data set
+#20: Now onto the looking at the test data set
 songs_p<- predict(research_a_model,
                         newdata = songs_test)
 summary(songs_p)
@@ -482,9 +482,9 @@ r2_songs_target <- 0.1362985
 
 # REGRESSION MODELS FOR QUESTION 1 is done - will be able to compare the two models
 
-#19. Now moving onto Question 2: does song type (collaboration vs solo) predict popularity?
+#21. Now moving onto Question 2: does song type (collaboration vs solo) predict popularity?
 
-#20. Running the EDA for this question to look at what data looks like
+#22. Running the EDA for this question to look at what data looks like
 str(dataset_songs$popularity.x)
 str(dataset_songs$song_type)
 
@@ -510,7 +510,7 @@ ggplot(dataset_songs, aes(x = popularity.x, fill = song_type)) +
 dataset_songs$song_type <- factor(dataset_songs$song_type) #telling are that the song type is a categorical variable 
 levels(dataset_songs$song_type) #checking what the different categories are (Solo or Collaboration)
 
-#21. Carrying out the regression model just as in previous steps
+#23. Carrying out the regression model just as in previous steps
 s_type_model<-lm(popularity.x~ song_type, data= songs_train)
 summary(s_type_model)
 coef(s_type_model)
@@ -520,7 +520,7 @@ coef(s_type_model)
 #Solo: -1.816362
 plot(s_type_model)
 
-#22. now running regression on the test dataset
+#24. now running regression on the test dataset
 songs_type_p<-predict(s_type_model, 
                       newdata = songs_test)
 summary(songs_type_p)
@@ -562,7 +562,7 @@ R2_songs_t<- 1-SSE_songs/SST_songs #this is the sum of square erros/total sum of
 R2_songs_t #  -0.0007788028
 
 
-#23. Now moving onto question 3: Does artist type influence song popualirty 
+#25. Now moving onto question 3: Does artist type influence song popualirty 
 
 str(dataset_songs$popularity.x)
 str(dataset_songs$artist_type)
@@ -581,7 +581,7 @@ ggplot(dataset_songs, aes(x = artist_type, y = popularity.x)) +
 dataset_songs$artist_type <- factor(dataset_songs$artist_type) #telling are that the artist type is a categorical variable 
 levels(dataset_songs$artist_type) #checking what the five different categories are (Band, DJ, Duo, rapper and singer)
 
-#24. Now the final regression model for question 3
+#26. Now the final regression model for question 3
 artist_model<-lm(popularity.x~ artist_type, data= songs_train)
 summary(artist_model)
 coef(artist_model)
@@ -594,7 +594,7 @@ coef(artist_model)
 #Singer: 0.6163634 
 plot(artist_model) #this produces four diagnostic plots of this regression 
 
-#25. now running regression on the test dataset
+#27. now running regression on the test dataset
 final_model<-predict(artist_model, 
                       newdata = songs_test)
 summary(final_model)
@@ -636,7 +636,7 @@ R2_final<- 1-SSE_final/SST_final #this is the sum of square errors/total sum of 
 R2_final #  0.03436526
 
 #Now the final regression is done moving onto the random forest model
-#26. Running a Random Forest for artist type and popualrity 
+#28. Running a Random Forest for artist type and popualrity 
 #first need to install the package for this speciifc model
 
 install.packages("randomForest")
