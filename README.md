@@ -23,16 +23,9 @@ Music is an influential and important part of many cultures and societies, bring
 - Linear Regression Model
 - Random Forest Model
 
-**Libraries**
-
-*install with nstall.packages() function*
-- tidyverse
-- ggplot2
-- MASS
-- rgl
-- corrplot
-- randomForest 
-  
+**Libraries used** (*install with install.packages() function*): 
+- tidyverse, ggplot2, MASS, rgl, corrplot and randomForest 
+(*install with install.packages() function*)
 
 ### Key findings
 - x
