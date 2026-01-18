@@ -13,6 +13,7 @@ Three main questions were explored to answer the question:
 ### Methodology 
 - Excel to clean the data
 - R studio to run Explanatory Data Analysis (EDA), Linear Regression Models and Random Forest Models.
+- Libraries used: tidyverse, ggplot2, MASS, rgl corrplot and randomForest (make sure that these are all downloaded)
   
 
 ### Key findings
@@ -22,6 +23,11 @@ Three main questions were explored to answer the question:
 
 ## How To Run The Code
 There are two options to run the code
-### Option 1: Using The Pre-Merged Dataset
-1. Download the "dataset_songs"
+### Option 1: Using The Pre-Merged And Cleaned Dataset
+1. Download the **"dataset_songs.csv"** file onto your laptop.
+2. Open RStudio and set the folder containing the "dataset_songs.csv" file as your working directory
+3. Start running the code from **Step 7** as no need to merge or clean the data
+4. Follow through each step to run the code and complete the analysis 
+   
 ### Option 2: Merging The Raw CSV Files
+1. Download the relevant files onto your laptop: **"official_songs_cleaned.csv"**, **"official_is_pop_cleaned.csv"**, **"acoustic_features.csv"** and **"artists_cleaned .csv"**
