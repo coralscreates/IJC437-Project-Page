@@ -1,4 +1,4 @@
-# IJC437-Project-Page 📚
+# IJC437 Project Page 📚
 IJC437: Introduction to Data Science Coursework Overview and Code
 
 ## 🎶Project: What are the characteristics that predict Song Popularity?
