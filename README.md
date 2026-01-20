@@ -29,9 +29,10 @@ Music plays an influential and important part in many cultures and societies, br
 
 
 ### 🎵Key findings
-- x
-- x
-- x
+1. 	Acoustic features **significantly** predict song popularity, with *all features contributing*, despite the model only explains approximately 20% of the variance.
+2. 	Song type **significantly** predicts song popularity but explains very little variance, suggesting that other factors play a more significant role.
+3. 	Artist type is **significantly** associated with song popularity in both linear regression and random forest models, with *DJs and rappers being the only significant predictors*.
+
 
 ### Repository Structure
 **Cleaned CSV Files**
