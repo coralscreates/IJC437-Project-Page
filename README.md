@@ -42,6 +42,7 @@ Music plays an influential and important part in many cultures and societies, br
 - official_is_pop_cleaned.csv: cleaned popularity file
 - acoustic_features .csv: acoustic features of songs file
 - artists_cleaned.csv: cleaned artist information file
+
 **IJC437 R codes**
 - IJC437 final pre-merged code .r : R script to run analysis on pre-merged dataset
 - IJC437 final code .r: R script to merge datasets and run analysis
