@@ -14,6 +14,7 @@ Music plays an influential and important part in many cultures and societies, br
 
 **Data Cleaning**
 - Microsoft Excel
+- RStudio
   
 **Explanatory Data Analysis**
   - RStudio
