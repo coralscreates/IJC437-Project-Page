@@ -44,8 +44,8 @@ Music plays an influential and important part in many cultures and societies, br
 - artists_cleaned.csv: cleaned artist information file
 
 **IJC437 R codes**
-- IJC437 final code .r : R script to run analysis on pre-merged dataset
-- IJC437 final pre-merged code.r: R script to merge datasets and run analysis
+- IJC437 final code .r : R script to run analysis on final merged dataset
+- IJC437 final pre-merged code.r: R script to merge datasets and then run analysis
   
 ## How To Run The Code
 There are two options to run the code
