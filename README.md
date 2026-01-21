@@ -37,11 +37,11 @@ Music plays an influential and important part in many cultures and societies, br
 
 ### Repository Structure
 **Cleaned CSV Files**
-- dataset_songs.csv: Premerged and cleaned dataset
+- dataset_songs.csv: fully merged & cleaned dataset
 - official_songs_cleaned.csv: cleaned raw songs file
 - official_is_pop_cleaned.csv: cleaned popularity file
-- acoustic_features .csv: acoustic features of songs file
-- artists_cleaned.csv: cleaned artist information file
+- acoustic_features .csv: song acoustic features dataset file
+- artists_cleaned.csv: cleaned artist information dataset file
 
 **IJC437 R codes**
 - IJC437 final code .r : R script to run analysis on final merged dataset
@@ -49,7 +49,7 @@ Music plays an influential and important part in many cultures and societies, br
   
 ## How To Run The Code
 There are two options to run the code
-### Option 1: Using The Pre-Merged And Cleaned Dataset
+### Option 1: Using The Fully Merged And Cleaned Dataset
 1. Open the **Cleaned CSV Files** folder in the repository
 2. Select and download the **"dataset_songs.csv"** file onto your laptop.
 3. Open the **IJC437 R codes** folder in the repository
