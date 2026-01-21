@@ -53,7 +53,7 @@ There are two options to run the code
 1. Open the **Cleaned CSV Files** folder in the repository
 2. Select and download the **"dataset_songs.csv"** file onto your laptop.
 3. Open the **IJC437 R codes** folder in the repository
-4. Select and download the **"IJC437 final pre-merged code .r"** file and open it in RStudio
+4. Select and download the **"IJC437 final code .r"** file and open it in RStudio
 5. Import the **"dataset_songs.csv"** file into RStudio (following Step 1 in the R script)
 6. Run the script from Step 1 to the end to run the code and complete the analysis 
    
@@ -65,5 +65,5 @@ There are two options to run the code
    - **"acoustic_features.csv"**
    - **"artists_cleaned .csv"**
 3. Open the **IJC437 R codes** folder in the repository
-4.  Select and download the **"IJC437 final code .r"** file and open it in RStudio
+4.  Select and download the **"IJC437 final pre-merged code.r"** file and open it in RStudio
 5. Follow each step in the script to merge the files and complete the analysis 
